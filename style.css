@@ -1,0 +1,200 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #404040;
+    text-align: center;
+}
+
+
+/* Typography */
+
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: #fff;
+    margin: 0;
+}
+
+strong {
+    font-weight: 900;
+}
+
+
+/* plus combinator-it says the p that comes exactly after h1
+if there was anything after h1 rather that p then this would not work
+it will work just for one p after h1
+for real projects it's better to give it a class */
+h1 + p {
+    color: #F18119;
+    font-weight: 900;
+    font-size: 1.3125rem;
+    text-transform: uppercase;  
+    margin: 0;
+}
+
+
+h2 {
+    font-size: 1.3125rem;
+    color: #404040;
+    margin: 0;
+}
+
+h2 + p {
+    font-size: 1rem;
+    color:  #F18119;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.top-text {
+    font-size: .625rem;
+    font-weight: 900;
+    color: #F18119;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    order: -1;
+    border-top: 2px solid #F18119;
+    margin-top: 0;
+    padding-top: 2px;
+}
+
+.fine-print {
+    font-size: .625rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+/* Intro Section */
+
+
+.intro {
+    background-color: brown;
+    background-image: url(images/ribs.jpg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding: 0 .5em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+}
+
+
+
+/* Main Content */
+
+.main-content {
+    padding: 2em 1em;    
+}
+
+/* One way of preventing the content to grow with the size 
+after 400px content will stop growing
+this is for dealing with big screens */
+
+.intro > *, 
+.main-content > * {
+    max-width: 400px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Form */
+
+.email-collector {
+    /* border: 2px red solid; */
+    width: 90%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+
+input,
+.btn {
+    width: 100%;
+    border-radius: 8px;
+}
+
+input {
+    margin: .75em 0;
+    padding: .5em;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    border: solid 1px #404040;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.1);
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    border: 0; 
+    font-size: .625em;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-main {
+    color: #fff;
+    background-image: linear-gradient(to left, #ff713b, #ffa51d);
+    transition: color .5s;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+.btn-main:hover,
+.btn-main:focus {
+    color: #404040;
+    transform: scale(1.1);
+}
+
+/* Media Queruy */
+
+@media (min-width: 500px) {
+    body {
+        font-size: 1.125rem;
+        display: flex;
+        
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2,
+    h1 + p {
+        font-size: 1.75rem;
+    }
+    .intro,
+    .main-content {
+        width: 50%;
+        min-height: 100vh;
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
